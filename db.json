@@ -1,0 +1,96 @@
+{
+    "restaurants": [
+        {
+            "id": 1,
+            "type": "Sushi",
+            "price": "$$",
+            "name": "Sushi Go"
+        },
+        {
+            "id": 2,
+            "type": "American",
+            "price": "$$",
+            "name": "Ricks SteakHouse"
+        },
+        {
+            "id": 3,
+            "type": "Greek",
+            "price": "$$",
+            "name": "Athena's"
+
+        },
+        {
+            "id": 4,
+            "type": "Fine Dining",
+            "price": "$$$$",
+            "name": "12"
+        },
+        {
+            "id": 5,
+            "type": "SeaFood",
+            "price": "$",
+            "name": "Bubba Chumps"
+        },
+        {
+            "id": 6,
+            "type": "American",
+            "price": "$",
+            "name": "Grizzly Jims"
+        },
+        {
+            "id": 7,
+            "type": "Italian",
+            "price": "$$$",
+            "name": "Pasticceria"
+        },
+        {
+            "id": 8,
+            "type": "Mexican",
+            "price": "$$$",
+            "name": "La Estrellas"
+        },
+        {
+
+            "id": 9,
+            "type": "Thai",
+            "price": "$$",
+            "name": "Nine and Nine Thai Kitchen"
+        },
+        {
+            "id": 10,
+            "type": "British Pub Fare",
+            "price": "$",
+            "name": "The Wailing Sailor Inn"
+        },
+        {
+            "id": 11,
+            "type": "Sushi",
+            "price": "$",
+            "name": "One Stop Sushi Shop"
+        },
+        {
+            "id": 12,
+            "type": "SeaFood",
+            "price": "$$$",
+            "name": "On The Docks"
+        },
+        {
+            "id": 13,
+            "type": "Italian",
+            "price": "$$",
+            "name": "Nona's Favorites"
+        },
+        {
+            "id": 14,
+            "type": "Fine Dining",
+            "price": "$$$$",
+            "name": "The Marcus Whitman"
+        },
+        {
+            "id": 15,
+            "type": "Mexican",
+            "price": "$$$",
+            "name": "Mercado's"
+        }
+    ]
+}
