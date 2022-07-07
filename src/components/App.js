@@ -10,9 +10,21 @@ import { Route, Switch } from "react-router-dom"
 
 function App() {
 
+//like page state
   const [list, setList] = useState([])
-
   const [liked, setLiked] = useState([])
+
+//form page state
+  const [formName, setFormName] = useState('name...')
+  const [formNumber, setFormNumber] = useState('number...')
+  const [formEmail, setFormEmail] = useState('email...')
+  const [formContainer, setFormContainer] = useState([])
+
+//Cart state
+  const [inCart, setCart] = useState([])
+
+//User State
+  const [loggedIn, setLoggedIn] = useState("")
 
   useEffect(()=>{
     fetch("http://localhost:3001/restaurants")
@@ -20,22 +32,64 @@ function App() {
     .then(data => setList(data))
   }, [])
 
-  function handleClick(e){
+//like page
+  const handleClick = (e) => {
+    setLiked([...liked, <li key={e.target.value}>{e.target.value}</li>] );
+  }
+//Form page
+  const handleNameChange = (e) => {
+    setFormName(e.target.value)
+  }
+  const handleEmailChange = (e) => {
+    setFormEmail(e.target.value)
+  }
+  const handleNumberChange = (e) => {
+    setFormNumber(e.target.value)
+  }
+//Cart
+  const handleAddToCart = (e) => {
+    setCart([...inCart, <li key={e.target.value}>{e.target.value}</li>])
+  }
 
-    const newArray = [...liked, <li key={e.target.value} className='card'>{e.target.value}</li>]
-    console.log(newArray)
-    setLiked(newArray)
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    const array = [...formContainer, 
+    <ul className="card">
+      <h1>Welcome {formName}</h1>
+      <h3>info:</h3>
+      <li key={formName} >{formName}</li>
+      <li key={formNumber} >{formNumber}</li>
+      <li key={formEmail} >{formEmail}</li></ul>]
+    setFormContainer(array)
+    setLoggedIn(formName)
   }
 
   return (
     <div className="App">
-      <Header />
+      <Header name={loggedIn}/>
       <NavBar />
       <Switch>
-        <Route exact path="/personalinfo"><PersonalInfo /></Route>
+        <Route exact path="/personalinfo">
+          <PersonalInfo 
+            submit={handleSubmit} 
+            formContainer={formContainer} 
+            name={formName} 
+            number={formNumber} 
+            email={formEmail} 
+            handleNumberChange={handleNumberChange} 
+            handleEmailChange={handleEmailChange} 
+            handleNameChange={handleNameChange}
+          /></Route>
         <Route exact path="/saved"><Saved liked={liked}/></Route>
-        <Route exact path="/Cart"><Cart /></Route>
-        <Route exact path="/"><Home list={list} handleClick={handleClick}/></Route>
+        <Route exact path="/Cart"><Cart inCart={inCart}/></Route>
+        <Route exact path="/">
+          <Home 
+            list={list} 
+            handleClick={handleClick}
+            handleAddToCart={handleAddToCart}
+          />
+        </Route>
       </Switch>
     </div>
   );

@@ -5,6 +5,22 @@
   border: 1px solid #ccc;
   width: 300px;
   list-style: none;
+  background-color: rgb(175, 37, 64);
+  color: white;
+}
+
+.subText {
+  color:  white;
+  padding-top: 15px;
+}
+
+.liked {
+  margin: 1rem;
+  box-shadow: 0 0 7px 0 #ddd;
+  border: none;
+  border: 1px solid #ccc;
+  width: 300px;
+  list-style: none;
 }
 
 .card:hover{
@@ -29,7 +45,7 @@
 .header {
   text-align:center;
   font-size: x-large; 
-  background-color: crimson;
+  background-color: rgb(175, 37, 64);
   color: white;
   height: 100px;
 }
@@ -47,4 +63,8 @@
 .button:hover{
   background: grey;
   border-radius: 100px;
+}
+
+.navBar {
+  background-color: rgb(175, 37, 64);
 }

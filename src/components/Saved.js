@@ -1,9 +1,14 @@
 import React from "react";
 
 function Saved({liked}){
+
+    const style ={
+        color: 'white'
+    }
+
     return (
-        <div>
-            <h1 className="title">Your Liked Locations</h1>
+        <div className="card">
+            <h1 className="title" style={style}>Your Liked Locations:</h1>
             <ul>{liked}</ul>
         </div>
     )

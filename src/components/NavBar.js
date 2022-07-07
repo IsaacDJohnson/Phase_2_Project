@@ -11,11 +11,11 @@ function NavBar(){
         margin: "0 6px 6px",
         // background: "blue",
         textDecoration: "none",
-        color: "Black",
+        color: "white",
       };
 
     return (
-        <div>
+        <div className="navBar">
             <NavLink to="/" exact style={linkStyles}>Home</NavLink>
             <NavLink to="/personalinfo" exact style={linkStyles}>Profile</NavLink>
             <NavLink to="/saved" exact style={linkStyles}>Liked</NavLink>

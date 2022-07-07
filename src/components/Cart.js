@@ -1,10 +1,15 @@
 import React from "react";
 
-function Cart(){
+function Cart({inCart}){
+
+    const style ={
+        color: 'white'
+    }
+
     return (
-        <div>
-            <h1 className="title">CheckOut</h1>
-            <ul className="list"></ul>
+        <div className="card">
+            <h1 className="title" style={style}>Items in your cart:</h1>
+            <ul>{inCart}</ul>
         </div>
     )
 }
