@@ -9,12 +9,12 @@ function PersonalInfo({name, number, email, handleNameChange, handleEmailChange,
     return (
         <div>
             <h1 className="title" style={style}>Personal Profile</h1>
-            <form className="title" onSubmit={submit}>
-            <input type="text" value={name} onChange={handleNameChange}></input><br/>
-            <input type="text" value={number} onChange={handleNumberChange}></input><br/>
-            <input type="text" value={email} onChange={handleEmailChange}></input><br/>
-            <button>submit</button>
-            </form>
+                <form className="title" onSubmit={submit}>
+                    <input type="text" value={name} onChange={handleNameChange}></input><br/>
+                    <input type="text" value={number} onChange={handleNumberChange}></input><br/>
+                    <input type="text" value={email} onChange={handleEmailChange}></input><br/>
+                <button>submit</button>
+                </form>
             <div>{formContainer}</div>
         </div>
     )

@@ -10,33 +10,35 @@ import { Route, Switch } from "react-router-dom"
 
 function App() {
 
-//like page state
+//like page state in Saved.js
   const [list, setList] = useState([])
   const [liked, setLiked] = useState([])
 
-//form page state
+//form page state in PersonalInfo.js
   const [formName, setFormName] = useState('name...')
   const [formNumber, setFormNumber] = useState('number...')
   const [formEmail, setFormEmail] = useState('email...')
   const [formContainer, setFormContainer] = useState([])
 
-//Cart state
+//Cart state in Cart.js
   const [inCart, setCart] = useState([])
 
-//User State
+//User State in Header.js
   const [loggedIn, setLoggedIn] = useState("")
 
   useEffect(()=>{
+    //fetching data from db.json
     fetch("http://localhost:3001/restaurants")
     .then(res => res.json())
     .then(data => setList(data))
   }, [])
 
-//like page
+//like page: adds liked target to saved component as a list item
   const handleClick = (e) => {
     setLiked([...liked, <li key={e.target.value}>{e.target.value}</li>] );
   }
-//Form page
+
+//Form page: adds input field submission to PersonalInfo component
   const handleNameChange = (e) => {
     setFormName(e.target.value)
   }
@@ -46,21 +48,24 @@ function App() {
   const handleNumberChange = (e) => {
     setFormNumber(e.target.value)
   }
-//Cart
+
+//Cart: adds target element to Cart component as a list item
   const handleAddToCart = (e) => {
     setCart([...inCart, <li key={e.target.value}>{e.target.value}</li>])
   }
 
-
   const handleSubmit = (e) => {
     e.preventDefault()
     const array = [...formContainer, 
+    
     <ul className="card">
       <h1>Welcome {formName}</h1>
-      <h3>info:</h3>
-      <li key={formName} >{formName}</li>
-      <li key={formNumber} >{formNumber}</li>
-      <li key={formEmail} >{formEmail}</li></ul>]
+        <h3>info:</h3>
+          <li key={formName} >{formName}</li>
+          <li key={formNumber} >{formNumber}</li>
+          <li key={formEmail} >{formEmail}</li>
+    </ul>]
+
     setFormContainer(array)
     setLoggedIn(formName)
   }

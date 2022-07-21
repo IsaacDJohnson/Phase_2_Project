@@ -5,6 +5,7 @@ function ListItem({item, handleClick, handleAddToCart}){
     const [isClicked, setClicked] = useState(true)
     const [isAdded, setAdded] = useState(true)
     const {name, type, price, Signiture, image} = item
+    
     // needed emoji: 👍
 
     function handleLike(e){
@@ -17,11 +18,11 @@ function ListItem({item, handleClick, handleAddToCart}){
         isAdded ? setAdded(false) : setAdded(true)
     }
 
-    const cardValue = {
-        name: name,
-        type: type,
-        price: price
-    }
+    // const cardValue = {
+    //     name: name,
+    //     type: type,
+    //     price: price
+    // }
 
     return (
         <li className="card">
