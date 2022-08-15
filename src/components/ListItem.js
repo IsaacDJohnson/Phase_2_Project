@@ -18,12 +18,6 @@ function ListItem({item, handleClick, handleAddToCart}){
         isAdded ? setAdded(false) : setAdded(true)
     }
 
-    // const cardValue = {
-    //     name: name,
-    //     type: type,
-    //     price: price
-    // }
-
     return (
         <li className="card">
             <div className="details" >

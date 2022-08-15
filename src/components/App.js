@@ -26,8 +26,9 @@ function App() {
 //User State in Header.js
   const [loggedIn, setLoggedIn] = useState("")
 
+//react method for side effect call each render
   useEffect(()=>{
-    //fetching data from db.json
+//fetching data from db.json
     fetch("http://localhost:3001/restaurants")
     .then(res => res.json())
     .then(data => setList(data))
@@ -53,7 +54,7 @@ function App() {
   const handleAddToCart = (e) => {
     setCart([...inCart, <li key={e.target.value}>{e.target.value}</li>])
   }
-
+//submit user input values from input form
   const handleSubmit = (e) => {
     e.preventDefault()
     const array = [...formContainer, 
@@ -85,7 +86,7 @@ function App() {
             handleNumberChange={handleNumberChange} 
             handleEmailChange={handleEmailChange} 
             handleNameChange={handleNameChange}
-          /></Route>
+        /></Route>
         <Route exact path="/saved"><Saved liked={liked}/></Route>
         <Route exact path="/Cart"><Cart inCart={inCart}/></Route>
         <Route exact path="/">
